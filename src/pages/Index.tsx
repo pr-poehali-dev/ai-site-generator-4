@@ -15,23 +15,37 @@ const SERVICES = [
   {
     icon: "Megaphone",
     title: "Наружная реклама",
-    desc: "Билборды, баннеры, вывески, лайтбоксы — всё для максимальной видимости вашего бренда в городе.",
     accent: "#00AEEF",
     bg: "#E8F4FC",
+    items: ["Вывески", "Объемные буквы", "Регистрация, согласование", "Производство стендов", "Реклама на транспорте"],
+  },
+  {
+    icon: "Layout",
+    title: "Размещение рекламы",
+    accent: "#0072BC",
+    bg: "#EAF3FB",
+    items: ["Щиты 6×3", "Сити-форматы", "Светодиодные экраны"],
   },
   {
     icon: "Printer",
-    title: "Широкоформатная печать",
-    desc: "Печать баннеров, плакатов, наклеек и любых форматов на профессиональном оборудовании.",
+    title: "Полиграфия",
     accent: "#EC008C",
     bg: "#FDE8F4",
+    items: ["Оперативная полиграфия", "Широкоформатная печать", "Печать на холсте"],
   },
   {
     icon: "Palette",
-    title: "Дизайн и производство",
-    desc: "Создаём яркие макеты и воплощаем их в жизнь — от идеи до готового изделия под ключ.",
+    title: "Дизайн рекламы",
     accent: "#0072BC",
     bg: "#EAF3FB",
+    items: ["Дизайн билбордов", "Дизайн сити-форматов", "Разработка логотипов, фирменного стиля", "Оформление фасадов", "Оформление торговых точек", "Упаковка и этикетка"],
+  },
+  {
+    icon: "FileCheck",
+    title: "Согласование",
+    accent: "#00AEEF",
+    bg: "#E8F4FC",
+    items: ["Разрешение на установку рекламных конструкций", "Согласование оформления фасадов", "Подготовка документации"],
   },
 ];
 
@@ -232,22 +246,31 @@ export default function Index() {
             <h2 className="section-title text-4xl lg:text-5xl text-kamea-dark">Наши услуги</h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {SERVICES.map((svc, i) => (
               <div
                 key={i}
-                className="card-hover rounded-3xl p-8 border border-gray-100 cursor-pointer"
+                className="card-hover rounded-3xl p-7 border border-gray-100 cursor-pointer flex flex-col"
                 style={{ background: svc.bg }}
               >
-                <div
-                  className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 shadow-lg"
-                  style={{ background: svc.accent }}
-                >
-                  <Icon name={svc.icon} size={26} className="text-white" fallback="Star" />
+                <div className="flex items-center gap-4 mb-5">
+                  <div
+                    className="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 shadow"
+                    style={{ background: svc.accent }}
+                  >
+                    <Icon name={svc.icon} size={22} className="text-white" fallback="Star" />
+                  </div>
+                  <h3 className="font-montserrat font-bold text-lg text-kamea-dark leading-tight">{svc.title}</h3>
                 </div>
-                <h3 className="font-montserrat font-bold text-xl text-kamea-dark mb-3">{svc.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{svc.desc}</p>
-                <div className="mt-6 flex items-center gap-2 font-semibold text-sm cursor-pointer" style={{ color: svc.accent }}>
+                <ul className="flex flex-col gap-2 flex-1">
+                  {svc.items.map((item, j) => (
+                    <li key={j} className="flex items-start gap-2 text-gray-600 text-sm">
+                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: svc.accent }} />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-6 flex items-center gap-2 font-semibold text-sm pt-4 border-t border-black/5" style={{ color: svc.accent }}>
                   Подробнее <Icon name="ArrowRight" size={16} />
                 </div>
               </div>
