@@ -5,47 +5,62 @@ const LOGO_URL = "https://cdn.poehali.dev/projects/a0e02015-7de3-44c3-9299-43117
 const BILLBOARD_IMG = "https://cdn.poehali.dev/projects/a0e02015-7de3-44c3-9299-43117a731d43/files/dfc65b0d-f52d-4e70-8bca-09e1dd6cf327.jpg";
 
 const NAV_LINKS = [
-  { label: "Проекты", href: "#projects" },
   { label: "Услуги", href: "#services" },
+  { label: "О компании", href: "#about" },
   { label: "Портфолио", href: "#portfolio" },
+  { label: "Как мы работаем", href: "#projects" },
   { label: "Контакты", href: "#contacts" },
 ];
 
 const SERVICES = [
   {
-    icon: "Megaphone",
-    title: "Наружная реклама",
-    accent: "#00AEEF",
-    bg: "#E8F4FC",
-    items: ["Вывески", "Объемные буквы", "Регистрация, согласование", "Производство стендов", "Реклама на транспорте"],
+    icon: "Star",
+    title: "Комплексные услуги",
+    accent: "#0072BC",
+    bg: "#EAF3FB",
+    items: ["Полный цикл от идеи до монтажа", "Единая точка ответственности", "Выгодные условия при комплексном заказе", "Индивидуальный менеджер"],
   },
   {
-    icon: "Layout",
+    icon: "Megaphone",
+    title: "Изготовление наружной рекламы",
+    accent: "#00AEEF",
+    bg: "#E8F4FC",
+    items: ["Вывески и лайтбоксы", "Объёмные буквы", "Баннеры и растяжки", "Стенды и конструкции любой сложности"],
+  },
+  {
+    icon: "MapPin",
     title: "Размещение рекламы",
     accent: "#0072BC",
     bg: "#EAF3FB",
-    items: ["Щиты 6×3", "Сити-форматы", "Светодиодные экраны"],
+    items: ["Собственная сеть — более 300 поверхностей", "Щиты 6×3 м", "Сити-форматы", "Самые востребованные места города"],
   },
   {
     icon: "Printer",
     title: "Полиграфия",
     accent: "#EC008C",
     bg: "#FDE8F4",
-    items: ["Оперативная полиграфия", "Широкоформатная печать", "Печать на холсте"],
+    items: ["Оперативная полиграфия", "Широкоформатная печать", "Печать на холсте и баннерной ткани", "Сувенирная продукция"],
   },
   {
     icon: "Palette",
     title: "Дизайн рекламы",
     accent: "#0072BC",
     bg: "#EAF3FB",
-    items: ["Дизайн билбордов", "Дизайн сити-форматов", "Разработка логотипов, фирменного стиля", "Оформление фасадов", "Оформление торговых точек", "Упаковка и этикетка"],
+    items: ["Дизайн билбордов и сити-форматов", "Разработка логотипов и фирменного стиля", "Оформление фасадов и торговых точек", "Упаковка и этикетка"],
   },
   {
-    icon: "FileCheck",
-    title: "Согласование",
+    icon: "Box",
+    title: "Производство стендов",
     accent: "#00AEEF",
     bg: "#E8F4FC",
-    items: ["Разрешение на установку рекламных конструкций", "Согласование оформления фасадов", "Подготовка документации"],
+    items: ["Стенды любых конфигураций", "Выставочные конструкции", "Информационные стенды", "Комплексный анализ потребностей"],
+  },
+  {
+    icon: "Truck",
+    title: "Реклама на транспорте",
+    accent: "#EC008C",
+    bg: "#FDE8F4",
+    items: ["Брендирование автомобилей", "Долговременная реклама", "Минимальные затраты — максимальный охват", "Работа по всему Смоленску"],
   },
 ];
 
@@ -279,8 +294,56 @@ export default function Index() {
         </div>
       </section>
 
+      {/* ABOUT */}
+      <section id="about" className="py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <p className="font-semibold uppercase tracking-widest text-sm mb-3" style={{ color: "#0072BC" }}>Кто мы</p>
+              <h2 className="section-title text-4xl lg:text-5xl text-kamea-dark mb-6">О компании</h2>
+              <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                Рекламное агентство «Камея» — одно из крупнейших агентств Смоленска. Мы занимаемся изготовлением и размещением наружной рекламы, оперативной полиграфией и разработкой дизайна.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-8">
+                Собственная сеть рекламных конструкций насчитывает более 300 поверхностей, расположенных в самых востребованных местах города. Мы предлагаем полный цикл рекламных услуг — от разработки концепции до монтажа готовой конструкции.
+              </p>
+              <div className="grid grid-cols-3 gap-6">
+                {[
+                  { value: "300+", label: "рекламных поверхностей" },
+                  { value: "15", suffix: " лет", label: "на рынке Смоленска" },
+                  { value: "5000+", label: "выполненных проектов" },
+                ].map((s, i) => (
+                  <div key={i} className="text-center p-4 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                    <div className="font-montserrat font-black text-2xl text-kamea-dark mb-1">{s.value}{s.suffix}</div>
+                    <div className="text-gray-500 text-xs leading-tight">{s.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="space-y-4">
+              {[
+                { icon: "Award", title: "Собственное производство", desc: "Полный контроль качества и соблюдение сроков на каждом этапе" },
+                { icon: "MapPin", title: "Лучшие места в городе", desc: "Более 300 рекламных поверхностей в самых проходимых точках Смоленска" },
+                { icon: "Users", title: "Команда профессионалов", desc: "Опытные дизайнеры, технологи и монтажники в одной команде" },
+                { icon: "Handshake", title: "Комплексный подход", desc: "Берём на себя всё — от идеи и дизайна до согласования и монтажа" },
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-4 p-5 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                  <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: "#E8F4FC" }}>
+                    <Icon name={item.icon} size={20} fallback="Star" style={{ color: "#0072BC" }} />
+                  </div>
+                  <div>
+                    <div className="font-montserrat font-bold text-kamea-dark mb-1">{item.title}</div>
+                    <div className="text-gray-500 text-sm leading-relaxed">{item.desc}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* PORTFOLIO */}
-      <section id="portfolio" className="py-24 bg-gray-50">
+      <section id="portfolio" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <p className="font-semibold uppercase tracking-widest text-sm mb-3" style={{ color: "#0072BC" }}>Наши работы</p>
@@ -415,9 +478,9 @@ export default function Index() {
 
               <div className="space-y-5">
                 {[
-                  { icon: "Phone", text: "+7 (800) 123-45-67", label: "Телефон" },
-                  { icon: "Mail", text: "info@kameya.ru", label: "Email" },
-                  { icon: "MapPin", text: "г. Москва, ул. Рекламная, 57", label: "Адрес" },
+                  { icon: "Phone", text: "+7 (4812) 35-90-97", label: "Телефон" },
+                  { icon: "Mail", text: "info@kameya-ra.ru", label: "Email" },
+                  { icon: "MapPin", text: "г. Смоленск, пр-т Гагарина, д. 22 (цокольный этаж, вход с левого торца)", label: "Адрес" },
                   { icon: "Clock", text: "Пн–Пт: 9:00 – 18:00", label: "Время работы" },
                 ].map((c, i) => (
                   <div key={i} className="flex items-center gap-4">
@@ -520,7 +583,7 @@ export default function Index() {
             <div className="flex-1" style={{ background: "#aaa" }} />
           </div>
           <div className="text-center text-gray-500 text-sm">
-            © 2024 Рекламное агентство «Камея». Все права защищены.
+            © 2025 Рекламное агентство «Камея», г. Смоленск. Все права защищены.
           </div>
         </div>
       </footer>
