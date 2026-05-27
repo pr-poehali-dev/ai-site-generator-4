@@ -5,39 +5,43 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 220 25% 10%;
+    --foreground: 210 25% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 25% 10%;
+    --card-foreground: 210 25% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 25% 10%;
+    --popover-foreground: 210 25% 12%;
 
-    --primary: 186 100% 42%;
+    --primary: 207 100% 37%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 270 70% 55%;
+    --secondary: 207 100% 37%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 15% 96%;
-    --muted-foreground: 220 10% 50%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 210 10% 50%;
 
-    --accent: 186 100% 42%;
+    --accent: 207 100% 37%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 15% 90%;
-    --input: 220 15% 90%;
-    --ring: 186 100% 42%;
+    --border: 210 20% 88%;
+    --input: 210 20% 88%;
+    --ring: 207 100% 37%;
 
     --radius: 0.75rem;
 
-    --cyan: #00c8d7;
-    --violet: #7c3aed;
-    --yellow: #f59e0b;
-    --dark: #0f172a;
+    /* Фирменные цвета Камея */
+    --blue: #0072bc;
+    --cyan-cmyk: #00aeef;
+    --magenta: #ec008c;
+    --yellow-cmyk: #fff200;
+    --black: #231f20;
+    --dark: #1a2035;
+    --blue-light: #e8f4fc;
   }
 }
 
@@ -63,21 +67,21 @@
 
 @layer utilities {
   .gradient-text {
-    background: linear-gradient(135deg, #00c8d7, #7c3aed);
+    background: linear-gradient(135deg, #0072bc, #00aeef);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .gradient-bg {
-    background: linear-gradient(135deg, #00c8d7 0%, #7c3aed 100%);
+    background: linear-gradient(135deg, #0072bc 0%, #00aeef 100%);
   }
 
   .gradient-bg-soft {
     background: linear-gradient(
       135deg,
-      rgba(0, 200, 215, 0.08) 0%,
-      rgba(124, 58, 237, 0.08) 100%
+      rgba(0, 114, 188, 0.08) 0%,
+      rgba(0, 174, 239, 0.08) 100%
     );
   }
 
@@ -89,22 +93,37 @@
 
   .card-hover:hover {
     transform: translateY(-6px);
-    box-shadow: 0 20px 60px rgba(0, 200, 215, 0.15);
+    box-shadow: 0 20px 60px rgba(0, 114, 188, 0.18);
   }
 
   .btn-primary {
-    background: linear-gradient(135deg, #00c8d7, #7c3aed);
+    background: #0072bc;
     color: white;
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
     transition:
-      opacity 0.2s,
+      background 0.2s,
       transform 0.2s;
   }
 
   .btn-primary:hover {
-    opacity: 0.9;
+    background: #005a96;
     transform: translateY(-1px);
+  }
+
+  .btn-outline {
+    border: 2px solid #0072bc;
+    color: #0072bc;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    transition:
+      background 0.2s,
+      color 0.2s;
+  }
+
+  .btn-outline:hover {
+    background: #0072bc;
+    color: white;
   }
 
   .section-title {
@@ -120,15 +139,6 @@
     to {
       opacity: 1;
       transform: translateY(0);
-    }
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
     }
   }
 
