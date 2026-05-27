@@ -109,17 +109,17 @@ export default function Index() {
     <div className="min-h-screen bg-white font-golos">
 
       {/* NAVBAR */}
-      <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 shadow-md" style={{ background: "#0072BC" }}>
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-[72px]">
-            <img src={LOGO_URL} alt="Камея" className="h-10 w-auto brightness-0 invert" />
+            <img src={LOGO_URL} alt="Камея" className="h-10 w-auto" />
 
             <div className="hidden md:flex items-center gap-8">
               {NAV_LINKS.map((link) => (
                 <button
                   key={link.href}
                   onClick={() => scrollTo(link.href)}
-                  className="text-white/90 hover:text-white transition-colors font-medium text-sm"
+                  className="text-gray-700 hover:text-[#0072BC] transition-colors font-medium text-sm"
                 >
                   {link.label}
                 </button>
@@ -128,25 +128,24 @@ export default function Index() {
 
             <button
               onClick={() => scrollTo("#contacts")}
-              className="hidden md:block px-5 py-2.5 rounded-full text-sm font-montserrat font-semibold bg-white transition-colors hover:bg-gray-100"
-              style={{ color: "#0072BC" }}
+              className="hidden md:block btn-primary px-5 py-2.5 rounded-full text-sm"
             >
               Связаться с нами
             </button>
 
-            <button className="md:hidden p-2 text-white" onClick={() => setMenuOpen(!menuOpen)}>
+            <button className="md:hidden p-2 text-gray-700" onClick={() => setMenuOpen(!menuOpen)}>
               <Icon name={menuOpen ? "X" : "Menu"} size={24} />
             </button>
           </div>
         </div>
 
         {menuOpen && (
-          <div className="md:hidden border-t border-white/20 px-4 py-4 flex flex-col gap-4" style={{ background: "#0072BC" }}>
+          <div className="md:hidden bg-white border-t border-gray-100 px-4 py-4 flex flex-col gap-4">
             {NAV_LINKS.map((link) => (
               <button
                 key={link.href}
                 onClick={() => scrollTo(link.href)}
-                className="text-left text-white font-medium py-1"
+                className="text-left text-gray-700 font-medium py-1"
               >
                 {link.label}
               </button>
