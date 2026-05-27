@@ -119,7 +119,7 @@ export default function Index() {
                 <button
                   key={link.href}
                   onClick={() => scrollTo(link.href)}
-                  className="text-gray-600 hover:text-[#0072BC] transition-colors font-medium text-sm"
+                  className="text-gray-900 hover:text-[#0072BC] transition-colors font-medium text-sm"
                 >
                   {link.label}
                 </button>
