@@ -161,12 +161,12 @@ export default function Index() {
       </nav>
 
       {/* HERO */}
-      <section className="relative pt-[72px] min-h-screen flex items-center overflow-hidden" style={{ background: "linear-gradient(135deg, #1A2035 0%, #003366 50%, #0072BC 100%)" }}>
+      <section className="relative pt-[72px] min-h-screen flex items-center overflow-hidden">
         <div
-          className="absolute inset-0 opacity-15"
-          style={{ backgroundImage: `url(${BILLBOARD_IMG})`, backgroundSize: "cover", backgroundPosition: "center" }}
+          className="absolute inset-0"
+          style={{ backgroundImage: `url(https://cdn.poehali.dev/projects/a0e02015-7de3-44c3-9299-43117a731d43/bucket/e42dba20-a275-4bb5-bc12-e93c25b83821.jpeg)`, backgroundSize: "cover", backgroundPosition: "center" }}
         />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(26,32,53,0.97) 40%, rgba(0,114,188,0.5) 100%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(10,20,50,0.92) 40%, rgba(10,20,50,0.4) 100%)" }} />
 
         {/* CMYK декоративные круги */}
         <div className="absolute top-20 right-20 w-64 h-64 rounded-full opacity-10" style={{ background: "#00AEEF", filter: "blur(60px)" }} />
